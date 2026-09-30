@@ -2,9 +2,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Our Little Universe ♡</title>
 
 <style>
+
+/* =====================================================
+   BASIC
+===================================================== */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -12,132 +18,314 @@
 }
 
 :root {
-    --text: #fff;
+    --text: #ffffff;
     --card: rgba(255,255,255,.12);
     --border: rgba(255,255,255,.22);
     --shadow: 0 20px 50px rgba(0,0,0,.25);
 }
 
-body {
-    font-family: Georgia, "Times New Roman", serif;
-    color: var(--text);
-    min-height: 100vh;
-    overflow-x: hidden;
-    transition: background 1s ease;
+html {
+    scroll-behavior: smooth;
 }
 
+body {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    color: var(--text);
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    transition:
+        background 1s ease;
+}
+
+
 /* =====================================================
-   BACKGROUNDS
+   BACKGROUND
 ===================================================== */
 
 .background {
     position: fixed;
+
     inset: 0;
+
     z-index: -10;
+
     overflow: hidden;
-    transition: all 1s ease;
+
+    transition:
+        all 1s ease;
 }
 
 .background::after {
     content: "";
+
     position: absolute;
+
     inset: 0;
-    background: radial-gradient(
-        circle at center,
-        transparent 0%,
-        rgba(0,0,0,.22) 100%
-    );
+
+    background:
+        radial-gradient(
+            circle at center,
+            transparent 0%,
+            rgba(0,0,0,.20) 100%
+        );
 }
 
-/* Galaxy */
+
+/* =====================================================
+   GALAXY
+===================================================== */
+
 .theme-galaxy .background {
+
     background:
-        radial-gradient(circle at 20% 30%, rgba(164,87,255,.45), transparent 25%),
-        radial-gradient(circle at 80% 20%, rgba(78,130,255,.35), transparent 25%),
-        radial-gradient(circle at 60% 80%, rgba(244,94,188,.3), transparent 30%),
-        linear-gradient(135deg,#080015,#13052d 45%,#03030d);
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(164,87,255,.45),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(78,130,255,.35),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 60% 80%,
+            rgba(244,94,188,.30),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #080015,
+            #13052d 45%,
+            #03030d
+        );
 }
 
-/* Romance */
+
+/* =====================================================
+   ROMANCE
+===================================================== */
+
 .theme-romance .background {
+
     background:
-        radial-gradient(circle at 20% 20%,rgba(255,185,210,.7),transparent 25%),
-        radial-gradient(circle at 80% 70%,rgba(255,111,160,.4),transparent 30%),
-        linear-gradient(135deg,#3a071d,#8e234c,#210511);
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,185,210,.7),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(255,111,160,.4),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #3a071d,
+            #8e234c,
+            #210511
+        );
 }
 
-/* Spring */
+
+/* =====================================================
+   SPRING
+===================================================== */
+
 .theme-spring .background {
+
     background:
-        radial-gradient(circle at 15% 20%,#ffd9e8,transparent 25%),
-        radial-gradient(circle at 80% 30%,#d8ffd9,transparent 25%),
-        linear-gradient(135deg,#5e9274,#a9d8a8,#e4c8d5);
+        radial-gradient(
+            circle at 15% 20%,
+            #ffd9e8,
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 80% 30%,
+            #d8ffd9,
+            transparent 25%
+        ),
+
+        linear-gradient(
+            135deg,
+            #5e9274,
+            #a9d8a8,
+            #e4c8d5
+        );
 }
 
-/* Summer */
+
+/* =====================================================
+   SUMMER
+===================================================== */
+
 .theme-summer .background {
+
     background:
-        radial-gradient(circle at 50% 20%,#fff2a8,transparent 22%),
-        linear-gradient(180deg,#45b8e8,#8ee4ed 55%,#f8c978);
+        radial-gradient(
+            circle at 50% 20%,
+            #fff2a8,
+            transparent 22%
+        ),
+
+        linear-gradient(
+            180deg,
+            #45b8e8,
+            #8ee4ed 55%,
+            #f8c978
+        );
 }
 
-/* Autumn */
+
+/* =====================================================
+   AUTUMN
+===================================================== */
+
 .theme-autumn .background {
+
     background:
-        radial-gradient(circle at 20% 20%,#f6b15b,transparent 25%),
-        radial-gradient(circle at 80% 50%,#a44b2a,transparent 30%),
-        linear-gradient(135deg,#30130b,#7d351c,#d17c36);
+        radial-gradient(
+            circle at 20% 20%,
+            #f6b15b,
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 80% 50%,
+            #a44b2a,
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #30130b,
+            #7d351c,
+            #d17c36
+        );
 }
 
-/* Winter */
+
+/* =====================================================
+   WINTER
+===================================================== */
+
 .theme-winter .background {
+
     background:
-        radial-gradient(circle at 50% 10%,#e7f8ff,transparent 20%),
-        linear-gradient(160deg,#102b49,#315d7e,#b8d7e8);
+        radial-gradient(
+            circle at 50% 10%,
+            #e7f8ff,
+            transparent 20%
+        ),
+
+        linear-gradient(
+            160deg,
+            #102b49,
+            #315d7e,
+            #b8d7e8
+        );
 }
 
-/* Day */
+
+/* =====================================================
+   DAY
+===================================================== */
+
 .theme-day .background {
+
     background:
-        radial-gradient(circle at 70% 15%,#fff7bc,transparent 18%),
-        linear-gradient(#67c9f2,#c7efff 55%,#8ecf8c);
+        radial-gradient(
+            circle at 70% 15%,
+            #fff7bc,
+            transparent 18%
+        ),
+
+        linear-gradient(
+            #67c9f2,
+            #c7efff 55%,
+            #8ecf8c
+        );
 }
 
-/* Night */
+
+/* =====================================================
+   NIGHT
+===================================================== */
+
 .theme-night .background {
+
     background:
-        radial-gradient(circle at 70% 20%,#ffffff44,transparent 12%),
-        linear-gradient(180deg,#030514,#101d42,#182b55);
+        radial-gradient(
+            circle at 70% 20%,
+            #ffffff44,
+            transparent 12%
+        ),
+
+        linear-gradient(
+            180deg,
+            #030514,
+            #101d42,
+            #182b55
+        );
 }
 
-/* Northern Lights */
+
+/* =====================================================
+   NORTHERN LIGHTS
+===================================================== */
+
 .theme-northern .background {
+
     background:
         radial-gradient(
             ellipse at 20% 20%,
             rgba(43,255,207,.32),
             transparent 30%
         ),
+
         radial-gradient(
             ellipse at 75% 25%,
             rgba(102,104,255,.35),
             transparent 35%
         ),
-        linear-gradient(180deg,#020b17,#061e2d 55%,#02070d);
+
+        linear-gradient(
+            180deg,
+            #020b17,
+            #061e2d 55%,
+            #02070d
+        );
 }
 
-/* =====================================================
-   NORTHERN LIGHTS
-===================================================== */
 
 .aurora {
+
     display: none;
+
     position: absolute;
+
     width: 130%;
     height: 55%;
+
     left: -15%;
     top: 5%;
-    filter: blur(25px);
+
+    filter:
+        blur(25px);
+
     opacity: .65;
 
     background:
@@ -146,18 +334,21 @@ body {
             rgba(45,255,198,.7),
             transparent 35%
         ),
+
         radial-gradient(
             ellipse at 60% 40%,
             rgba(93,116,255,.65),
             transparent 38%
         ),
+
         radial-gradient(
             ellipse at 75% 70%,
             rgba(200,70,255,.35),
             transparent 30%
         );
 
-    animation: auroraMove 10s ease-in-out infinite alternate;
+    animation:
+        auroraMove 10s ease-in-out infinite alternate;
 }
 
 .theme-northern .aurora {
@@ -165,24 +356,37 @@ body {
 }
 
 @keyframes auroraMove {
+
     from {
-        transform: translateX(-4%) skewX(-4deg) scale(1);
+        transform:
+            translateX(-4%)
+            skewX(-4deg)
+            scale(1);
     }
 
     to {
-        transform: translateX(5%) skewX(5deg) scale(1.08);
+        transform:
+            translateX(5%)
+            skewX(5deg)
+            scale(1.08);
     }
 }
+
 
 /* =====================================================
    SNOWY MOUNTAINS
 ===================================================== */
 
 .mountains {
+
     display: none;
+
     position: absolute;
+
     bottom: 0;
+
     width: 100%;
+
     height: 40%;
 }
 
@@ -191,14 +395,22 @@ body {
 }
 
 .mountain {
+
     position: absolute;
+
     bottom: 0;
+
     width: 0;
     height: 0;
 
-    border-left: 170px solid transparent;
-    border-right: 170px solid transparent;
-    border-bottom: 270px solid rgba(30,55,76,.75);
+    border-left:
+        170px solid transparent;
+
+    border-right:
+        170px solid transparent;
+
+    border-bottom:
+        270px solid rgba(30,55,76,.75);
 }
 
 .mountain.one {
@@ -206,42 +418,60 @@ body {
 }
 
 .mountain.two {
+
     left: 25%;
+
     border-left-width: 220px;
     border-right-width: 220px;
     border-bottom-width: 340px;
+
     opacity: .8;
 }
 
 .mountain.three {
+
     right: -100px;
+
     border-left-width: 240px;
     border-right-width: 240px;
     border-bottom-width: 300px;
+
     opacity: .65;
 }
 
 .mountain::before {
+
     content: "";
+
     position: absolute;
+
     left: -70px;
     top: 0;
 
     width: 0;
     height: 0;
 
-    border-left: 70px solid transparent;
-    border-right: 70px solid transparent;
-    border-bottom: 120px solid rgba(240,250,255,.8);
+    border-left:
+        70px solid transparent;
+
+    border-right:
+        70px solid transparent;
+
+    border-bottom:
+        120px solid rgba(240,250,255,.8);
 }
+
 
 /* =====================================================
    BEACH
 ===================================================== */
 
 .beach {
+
     display: none;
+
     position: absolute;
+
     inset: 0;
 }
 
@@ -250,6 +480,7 @@ body {
 }
 
 .beach-sun {
+
     position: absolute;
 
     width: 130px;
@@ -257,7 +488,8 @@ body {
 
     border-radius: 50%;
 
-    background: #fff2b5;
+    background:
+        #fff2b5;
 
     box-shadow:
         0 0 70px rgba(255,240,170,.6);
@@ -267,40 +499,61 @@ body {
 }
 
 .ocean {
+
     position: absolute;
+
     bottom: 0;
 
     width: 100%;
+
     height: 48%;
 
     background:
+
         repeating-linear-gradient(
             175deg,
             transparent 0 22px,
             rgba(255,255,255,.14) 23px 26px
         ),
-        linear-gradient(#168db5,#075d82);
+
+        linear-gradient(
+            #168db5,
+            #075d82
+        );
 }
 
 .sand {
+
     position: absolute;
+
     bottom: 0;
 
     height: 18%;
+
     width: 100%;
 
     background:
-        linear-gradient(#e8d0a3,#d8b982);
+        linear-gradient(
+            #e8d0a3,
+            #d8b982
+        );
 
     clip-path:
-        polygon(0 30%,100% 0,100% 100%,0 100%);
+        polygon(
+            0 30%,
+            100% 0,
+            100% 100%,
+            0 100%
+        );
 }
+
 
 /* =====================================================
    SUNSET
 ===================================================== */
 
 .theme-sunset .background {
+
     background:
         linear-gradient(
             180deg,
@@ -313,6 +566,7 @@ body {
 }
 
 .sunset-sun {
+
     display: none;
 
     position: absolute;
@@ -322,7 +576,8 @@ body {
 
     border-radius: 50%;
 
-    background: #ffd28b;
+    background:
+        #ffd28b;
 
     box-shadow:
         0 0 90px rgba(255,170,80,.65);
@@ -330,31 +585,39 @@ body {
     left: 50%;
     top: 25%;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 }
 
 .theme-sunset .sunset-sun {
     display: block;
 }
 
+
 /* =====================================================
    STARS
 ===================================================== */
 
 .stars {
+
     position: fixed;
+
     inset: 0;
+
     pointer-events: none;
+
     z-index: -2;
 }
 
 .star {
+
     position: absolute;
 
     width: 3px;
     height: 3px;
 
     background: white;
+
     border-radius: 50%;
 
     opacity: .8;
@@ -364,6 +627,7 @@ body {
 }
 
 @keyframes twinkle {
+
     from {
         opacity: .2;
         transform: scale(.7);
@@ -375,18 +639,27 @@ body {
     }
 }
 
+
 /* =====================================================
-   APP
+   MAIN
 ===================================================== */
 
 .app {
-    width: min(1100px,92%);
-    margin: auto;
-    padding: 35px 0 70px;
+
+    width:
+        min(1100px,92%);
+
+    margin:
+        auto;
+
+    padding:
+        35px 0 70px;
 }
 
 .glass {
-    background: var(--card);
+
+    background:
+        var(--card);
 
     border:
         1px solid var(--border);
@@ -397,24 +670,36 @@ body {
     -webkit-backdrop-filter:
         blur(18px);
 
-    border-radius: 28px;
+    border-radius:
+        28px;
 
     box-shadow:
         var(--shadow);
 }
 
+
+/* =====================================================
+   HEADER
+===================================================== */
+
 header {
+
     text-align: center;
 
-    padding: 50px 25px;
+    padding:
+        50px 25px;
 
-    margin-bottom: 25px;
+    margin-bottom:
+        25px;
 }
 
 .logo {
-    font-size: 4rem;
 
-    margin-bottom: 10px;
+    font-size:
+        4rem;
+
+    margin-bottom:
+        10px;
 
     animation:
         floating 4s ease-in-out infinite;
@@ -423,44 +708,89 @@ header {
 @keyframes floating {
 
     50% {
-        transform: translateY(-8px);
+        transform:
+            translateY(-8px);
     }
-
 }
 
 h1 {
-    font-size:
-        clamp(2.4rem,7vw,5rem);
 
-    margin-bottom: 10px;
+    font-size:
+        clamp(
+            2.4rem,
+            7vw,
+            5rem
+        );
+
+    margin-bottom:
+        10px;
 }
 
 .subtitle {
-    opacity: .85;
-    font-size: 1.1rem;
+
+    opacity:
+        .85;
+
+    font-size:
+        1.1rem;
 }
 
+
+/* =====================================================
+   CARDS
+===================================================== */
+
 .card {
-    padding: 28px;
-    margin: 22px 0;
+
+    padding:
+        28px;
+
+    margin:
+        22px 0;
 }
 
 .card h2 {
-    margin-bottom: 18px;
 
-    font-size: 1.8rem;
+    margin-bottom:
+        18px;
+
+    font-size:
+        1.8rem;
 }
+
+.center {
+    text-align: center;
+}
+
+.small {
+
+    opacity:
+        .65;
+
+    font-size:
+        .85rem;
+
+    line-height:
+        1.5;
+}
+
+
+/* =====================================================
+   FORMS
+===================================================== */
 
 input,
 textarea,
 select {
 
-    width: 100%;
+    width:
+        100%;
 
     padding:
         14px 16px;
 
-    border-radius: 15px;
+    border-radius:
+        15px;
 
     border:
         1px solid var(--border);
@@ -468,35 +798,52 @@ select {
     background:
         rgba(255,255,255,.12);
 
-    color: white;
+    color:
+        white;
 
-    outline: none;
+    outline:
+        none;
 
-    margin-top: 8px;
-    margin-bottom: 15px;
+    margin-top:
+        8px;
 
-    font-family: inherit;
+    margin-bottom:
+        15px;
+
+    font-family:
+        inherit;
 }
 
 select option {
-    color: #222;
+    color:
+        #222;
 }
 
 textarea {
-    min-height: 120px;
-    resize: vertical;
+
+    min-height:
+        120px;
+
+    resize:
+        vertical;
 }
 
 label {
-    display: block;
-    margin-top: 10px;
+
+    display:
+        block;
+
+    margin-top:
+        10px;
 }
 
 button {
 
-    border: none;
+    border:
+        none;
 
-    border-radius: 50px;
+    border-radius:
+        50px;
 
     padding:
         13px 21px;
@@ -507,15 +854,20 @@ button {
     border:
         1px solid rgba(255,255,255,.3);
 
-    color: white;
+    color:
+        white;
 
-    cursor: pointer;
+    cursor:
+        pointer;
 
-    font-family: inherit;
+    font-family:
+        inherit;
 
-    font-size: .95rem;
+    font-size:
+        .95rem;
 
-    transition: .25s;
+    transition:
+        .25s;
 }
 
 button:hover {
@@ -528,31 +880,23 @@ button:hover {
 }
 
 .primary {
+
     background:
         rgba(255,220,240,.25);
 }
 
-.center {
-    text-align: center;
-}
-
-.small {
-    opacity: .65;
-
-    font-size: .85rem;
-
-    line-height: 1.5;
-}
-
 .row {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         1fr 1fr;
 
-    gap: 15px;
+    gap:
+        15px;
 }
+
 
 /* =====================================================
    TIMER
@@ -560,14 +904,17 @@ button:hover {
 
 .timer {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(4,1fr);
 
-    gap: 12px;
+    gap:
+        12px;
 
-    margin-top: 20px;
+    margin-top:
+        20px;
 }
 
 .time-box {
@@ -575,27 +922,34 @@ button:hover {
     padding:
         20px 10px;
 
-    text-align: center;
+    text-align:
+        center;
 
     background:
         rgba(255,255,255,.09);
 
-    border-radius: 20px;
+    border-radius:
+        20px;
 }
 
 .time-box strong {
 
-    display: block;
+    display:
+        block;
 
-    font-size: 2rem;
+    font-size:
+        2rem;
 }
 
 .time-box span {
 
-    opacity: .7;
+    opacity:
+        .7;
 
-    font-size: .8rem;
+    font-size:
+        .8rem;
 }
+
 
 /* =====================================================
    THEMES
@@ -603,23 +957,32 @@ button:hover {
 
 .theme-grid {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
-        repeat(auto-fit,minmax(130px,1fr));
+        repeat(
+            auto-fit,
+            minmax(130px,1fr)
+        );
 
-    gap: 12px;
+    gap:
+        12px;
 }
 
 .theme-choice {
 
-    padding: 20px 10px;
+    padding:
+        20px 10px;
 
-    border-radius: 18px;
+    border-radius:
+        18px;
 
-    text-align: center;
+    text-align:
+        center;
 
-    cursor: pointer;
+    cursor:
+        pointer;
 
     border:
         2px solid transparent;
@@ -627,7 +990,8 @@ button:hover {
     background:
         rgba(255,255,255,.08);
 
-    transition: .25s;
+    transition:
+        .25s;
 }
 
 .theme-choice:hover {
@@ -638,7 +1002,8 @@ button:hover {
 
 .theme-choice.active {
 
-    border-color: white;
+    border-color:
+        white;
 
     background:
         rgba(255,255,255,.18);
@@ -646,51 +1011,83 @@ button:hover {
 
 .theme-preview {
 
-    height: 65px;
+    height:
+        65px;
 
-    border-radius: 12px;
+    border-radius:
+        12px;
 
-    margin-bottom: 9px;
+    margin-bottom:
+        9px;
 }
 
 .preview-galaxy {
     background:
-        radial-gradient(circle,#a84cff,#090018);
+        radial-gradient(
+            circle,
+            #a84cff,
+            #090018
+        );
 }
 
 .preview-romance {
     background:
-        linear-gradient(135deg,#ff9abb,#68112f);
+        linear-gradient(
+            135deg,
+            #ff9abb,
+            #68112f
+        );
 }
 
 .preview-spring {
     background:
-        linear-gradient(135deg,#d9ffc9,#e8b8d0);
+        linear-gradient(
+            135deg,
+            #d9ffc9,
+            #e8b8d0
+        );
 }
 
 .preview-summer {
     background:
-        linear-gradient(#4bc5ee,#f9cf77);
+        linear-gradient(
+            #4bc5ee,
+            #f9cf77
+        );
 }
 
 .preview-autumn {
     background:
-        linear-gradient(135deg,#a94620,#e39a42);
+        linear-gradient(
+            135deg,
+            #a94620,
+            #e39a42
+        );
 }
 
 .preview-winter {
     background:
-        linear-gradient(135deg,#bde5fa,#274766);
+        linear-gradient(
+            135deg,
+            #bde5fa,
+            #274766
+        );
 }
 
 .preview-day {
     background:
-        linear-gradient(#65d2ff,#9bd58e);
+        linear-gradient(
+            #65d2ff,
+            #9bd58e
+        );
 }
 
 .preview-night {
     background:
-        linear-gradient(#080b24,#253f70);
+        linear-gradient(
+            #080b24,
+            #253f70
+        );
 }
 
 .preview-northern {
@@ -728,17 +1125,21 @@ button:hover {
         );
 }
 
+
 /* =====================================================
    OUR SONG
 ===================================================== */
 
 .song-player {
 
-    margin-top: 22px;
+    margin-top:
+        22px;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
-    border-radius: 20px;
+    border-radius:
+        20px;
 
     box-shadow:
         0 15px 35px rgba(0,0,0,.25);
@@ -746,26 +1147,34 @@ button:hover {
 
 .song-player iframe {
 
-    display: block;
+    display:
+        block;
 
-    width: 100%;
+    width:
+        100%;
 
-    min-height: 220px;
+    min-height:
+        220px;
 
-    border: none;
+    border:
+        none;
 }
 
 .song-empty {
 
-    padding: 25px;
+    padding:
+        25px;
 
-    border-radius: 18px;
+    border-radius:
+        18px;
 
     background:
         rgba(255,255,255,.07);
 
-    margin-top: 20px;
+    margin-top:
+        20px;
 }
+
 
 /* =====================================================
    WISH NOTES
@@ -773,26 +1182,35 @@ button:hover {
 
 .wishes {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
-        repeat(auto-fill,minmax(220px,1fr));
+        repeat(
+            auto-fill,
+            minmax(220px,1fr)
+        );
 
-    gap: 18px;
+    gap:
+        18px;
 
-    margin-top: 22px;
+    margin-top:
+        22px;
 }
 
 .note {
 
-    color: #392a32;
+    color:
+        #392a32;
 
     padding:
         24px 20px;
 
-    min-height: 170px;
+    min-height:
+        170px;
 
-    position: relative;
+    position:
+        relative;
 
     box-shadow:
         0 12px 25px rgba(0,0,0,.2);
@@ -800,9 +1218,11 @@ button:hover {
     transform:
         rotate(var(--rotation));
 
-    transition: .3s;
+    transition:
+        .3s;
 
-    overflow-wrap: anywhere;
+    overflow-wrap:
+        anywhere;
 }
 
 .note:hover {
@@ -813,42 +1233,56 @@ button:hover {
 }
 
 .note:nth-child(4n+1) {
-    background: #fff1a8;
+    background:
+        #fff1a8;
 }
 
 .note:nth-child(4n+2) {
-    background: #ffd6e7;
+    background:
+        #ffd6e7;
 }
 
 .note:nth-child(4n+3) {
-    background: #d9f4ff;
+    background:
+        #d9f4ff;
 }
 
 .note:nth-child(4n+4) {
-    background: #e0ffd8;
+    background:
+        #e0ffd8;
 }
 
 .note::before {
 
-    content: "♡";
+    content:
+        "♡";
 
-    position: absolute;
+    position:
+        absolute;
 
-    top: 8px;
-    right: 12px;
+    top:
+        8px;
 
-    font-size: 22px;
+    right:
+        12px;
 
-    opacity: .5;
+    font-size:
+        22px;
+
+    opacity:
+        .5;
 }
 
 .note-date {
 
-    font-size: .75rem;
+    font-size:
+        .75rem;
 
-    opacity: .6;
+    opacity:
+        .6;
 
-    margin-bottom: 12px;
+    margin-bottom:
+        12px;
 }
 
 .note-text {
@@ -858,42 +1292,58 @@ button:hover {
         "Bradley Hand",
         cursive;
 
-    line-height: 1.5;
+    line-height:
+        1.5;
 
-    font-size: 1.05rem;
+    font-size:
+        1.05rem;
 }
 
 .note-author {
 
-    position: absolute;
+    position:
+        absolute;
 
-    bottom: 12px;
-    right: 15px;
+    bottom:
+        12px;
 
-    font-size: .8rem;
+    right:
+        15px;
 
-    opacity: .65;
+    font-size:
+        .8rem;
 
-    font-style: italic;
+    opacity:
+        .65;
+
+    font-style:
+        italic;
 }
 
 .delete-note {
 
-    position: absolute;
+    position:
+        absolute;
 
-    bottom: 8px;
-    left: 10px;
+    bottom:
+        8px;
+
+    left:
+        10px;
 
     padding:
         4px 9px;
 
-    font-size: .7rem;
+    font-size:
+        .7rem;
 
     background:
         rgba(0,0,0,.08);
 
-    color: #392a32;
+    color:
+        #392a32;
 }
+
 
 /* =====================================================
    PHOTO
@@ -904,31 +1354,40 @@ button:hover {
     border:
         2px dashed rgba(255,255,255,.3);
 
-    border-radius: 22px;
+    border-radius:
+        22px;
 
-    padding: 25px;
+    padding:
+        25px;
 
-    text-align: center;
+    text-align:
+        center;
 
-    margin-top: 15px;
+    margin-top:
+        15px;
 }
 
 .photo-preview {
 
-    margin-top: 20px;
+    margin-top:
+        20px;
 }
 
 .photo-preview img {
 
-    max-width: 100%;
+    max-width:
+        100%;
 
-    max-height: 500px;
+    max-height:
+        500px;
 
-    border-radius: 20px;
+    border-radius:
+        20px;
 
     box-shadow:
         0 15px 40px rgba(0,0,0,.3);
 }
+
 
 /* =====================================================
    MEMORIES
@@ -936,26 +1395,33 @@ button:hover {
 
 .memory {
 
-    padding: 18px;
+    padding:
+        18px;
 
-    border-radius: 18px;
+    border-radius:
+        18px;
 
     background:
         rgba(255,255,255,.08);
 
-    margin-bottom: 12px;
+    margin-bottom:
+        12px;
 }
 
 .memory small {
-    opacity: .6;
+    opacity:
+        .6;
 }
 
 .memory p {
 
-    margin-top: 8px;
+    margin-top:
+        8px;
 
-    line-height: 1.5;
+    line-height:
+        1.5;
 }
+
 
 /* =====================================================
    FOOTER
@@ -963,16 +1429,25 @@ button:hover {
 
 footer {
 
-    text-align: center;
+    text-align:
+        center;
 
-    opacity: .7;
+    opacity:
+        .7;
 
-    padding: 30px;
+    padding:
+        30px;
 }
 
 .hidden {
-    display: none !important;
+    display:
+        none !important;
 }
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media(max-width:700px) {
 
@@ -990,7 +1465,8 @@ footer {
 
     .card {
 
-        padding: 21px;
+        padding:
+            21px;
     }
 
     header {
@@ -1001,18 +1477,27 @@ footer {
 
     .logo {
 
-        font-size: 3rem;
+        font-size:
+            3rem;
     }
 
     .song-player iframe {
 
-        min-height: 200px;
+        min-height:
+            200px;
     }
 }
+
 </style>
 </head>
 
+
 <body class="theme-galaxy">
+
+
+<!-- =====================================================
+     BACKGROUND ELEMENTS
+===================================================== -->
 
 <div class="background">
 
@@ -1021,7 +1506,9 @@ footer {
     <div class="mountains">
 
         <div class="mountain one"></div>
+
         <div class="mountain two"></div>
+
         <div class="mountain three"></div>
 
     </div>
@@ -1040,19 +1527,38 @@ footer {
 
 </div>
 
-<div class="stars" id="stars"></div>
+
+<div
+    class="stars"
+    id="stars"
+></div>
+
+
+<!-- =====================================================
+     APP
+===================================================== -->
 
 <main class="app">
 
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
 <header class="glass">
 
-    <div class="logo">♡</div>
+    <div class="logo">
+        ♡
+    </div>
 
     <h1 id="title">
         Our Little Universe
     </h1>
 
-    <p class="subtitle" id="subtitle">
+    <p
+        class="subtitle"
+        id="subtitle"
+    >
         A little place that belongs to us.
     </p>
 
@@ -1063,7 +1569,10 @@ footer {
      SETUP
 ===================================================== -->
 
-<section class="card glass" id="setup">
+<section
+    class="card glass"
+    id="setup"
+>
 
     <h2>
         ✨ Create Our Universe
@@ -1084,6 +1593,7 @@ footer {
 
         </div>
 
+
         <div>
 
             <label>
@@ -1099,6 +1609,7 @@ footer {
 
     </div>
 
+
     <label>
         When did your story begin?
     </label>
@@ -1108,111 +1619,191 @@ footer {
         id="startDate"
     >
 
-    <h3 style="margin:15px 0">
+
+    <h3
+        style="
+            margin:15px 0
+        "
+    >
         Choose our atmosphere
     </h3>
 
+
     <div class="theme-grid">
+
 
         <div
             class="theme-choice active"
             data-theme="galaxy"
         >
-            <div class="theme-preview preview-galaxy"></div>
+
+            <div
+                class="theme-preview preview-galaxy"
+            ></div>
+
             🌌 Galaxy
+
         </div>
+
 
         <div
             class="theme-choice"
             data-theme="romance"
         >
-            <div class="theme-preview preview-romance"></div>
+
+            <div
+                class="theme-preview preview-romance"
+            ></div>
+
             💗 Romance
+
         </div>
+
 
         <div
             class="theme-choice"
             data-theme="spring"
         >
-            <div class="theme-preview preview-spring"></div>
+
+            <div
+                class="theme-preview preview-spring"
+            ></div>
+
             🌸 Spring
+
         </div>
+
 
         <div
             class="theme-choice"
             data-theme="summer"
         >
-            <div class="theme-preview preview-summer"></div>
+
+            <div
+                class="theme-preview preview-summer"
+            ></div>
+
             ☀️ Summer
+
         </div>
+
 
         <div
             class="theme-choice"
             data-theme="autumn"
         >
-            <div class="theme-preview preview-autumn"></div>
+
+            <div
+                class="theme-preview preview-autumn"
+            ></div>
+
             🍂 Autumn
+
         </div>
+
 
         <div
             class="theme-choice"
             data-theme="winter"
         >
-            <div class="theme-preview preview-winter"></div>
+
+            <div
+                class="theme-preview preview-winter"
+            ></div>
+
             ❄️ Winter
+
         </div>
+
 
         <div
             class="theme-choice"
             data-theme="day"
         >
-            <div class="theme-preview preview-day"></div>
+
+            <div
+                class="theme-preview preview-day"
+            ></div>
+
             🌤️ Day
+
         </div>
+
 
         <div
             class="theme-choice"
             data-theme="night"
         >
-            <div class="theme-preview preview-night"></div>
+
+            <div
+                class="theme-preview preview-night"
+            ></div>
+
             🌙 Night
+
         </div>
+
 
         <div
             class="theme-choice"
             data-theme="northern"
         >
-            <div class="theme-preview preview-northern"></div>
+
+            <div
+                class="theme-preview preview-northern"
+            ></div>
+
             🌌 Northern Lights
+
         </div>
+
 
         <div
             class="theme-choice"
             data-theme="snow"
         >
-            <div class="theme-preview preview-snow"></div>
+
+            <div
+                class="theme-preview preview-snow"
+            ></div>
+
             🏔️ Snowy Mountains
+
         </div>
+
 
         <div
             class="theme-choice"
             data-theme="beach"
         >
-            <div class="theme-preview preview-beach"></div>
+
+            <div
+                class="theme-preview preview-beach"
+            ></div>
+
             🏖️ Beach
+
         </div>
+
 
         <div
             class="theme-choice"
             data-theme="sunset"
         >
-            <div class="theme-preview preview-sunset"></div>
+
+            <div
+                class="theme-preview preview-sunset"
+            ></div>
+
             🌅 Sunset
+
         </div>
 
     </div>
 
+
     <br>
+
 
     <button
         class="primary"
@@ -1234,15 +1825,21 @@ footer {
 >
 
 
-<!-- TIMER -->
+<!-- =====================================================
+     TIMER
+===================================================== -->
 
-<section class="card glass center">
+<section
+    class="card glass center"
+>
 
     <h2>
         ♡ We've Been Us For ♡
     </h2>
 
+
     <div class="timer">
+
 
         <div class="time-box">
 
@@ -1256,6 +1853,7 @@ footer {
 
         </div>
 
+
         <div class="time-box">
 
             <strong id="hours">
@@ -1268,6 +1866,7 @@ footer {
 
         </div>
 
+
         <div class="time-box">
 
             <strong id="minutes">
@@ -1279,6 +1878,7 @@ footer {
             </span>
 
         </div>
+
 
         <div class="time-box">
 
@@ -1301,21 +1901,26 @@ footer {
      OUR SONG
 ===================================================== -->
 
-<section class="card glass center">
+<section
+    class="card glass center"
+>
 
     <h2>
         🎵 Our Song
     </h2>
 
+
     <p class="small">
         Add the song that feels like us ♡
     </p>
+
 
     <input
         type="url"
         id="songLink"
         placeholder="Paste a YouTube link here..."
     >
+
 
     <button
         class="primary"
@@ -1324,7 +1929,10 @@ footer {
         Save Our Song ♡
     </button>
 
-    <div id="songPlayer"></div>
+
+    <div
+        id="songPlayer"
+    ></div>
 
 </section>
 
@@ -1333,28 +1941,36 @@ footer {
      WISHES
 ===================================================== -->
 
-<section class="card glass">
+<section
+    class="card glass"
+>
 
     <h2>
         💌 Wishes For Us
     </h2>
 
+
     <p class="small">
+
         Write down the little things you wish for
         your future together. Dreams, places you want
         to visit, things you want to do, promises,
         silly ideas or anything your heart wants.
+
     </p>
+
 
     <textarea
         id="wishText"
         placeholder="One day I wish we could..."
     ></textarea>
 
+
     <input
         id="wishAuthor"
         placeholder="Your name"
     >
+
 
     <button
         class="primary"
@@ -1362,6 +1978,7 @@ footer {
     >
         Pin This Wish ♡
     </button>
+
 
     <div
         class="wishes"
@@ -1375,16 +1992,22 @@ footer {
      PHOTO
 ===================================================== -->
 
-<section class="card glass">
+<section
+    class="card glass"
+>
 
     <h2>
         📸 A Little Piece Of Us
     </h2>
 
+
     <p class="small">
+
         Upload a favourite picture and keep it here
         in your universe.
+
     </p>
+
 
     <div class="photo-box">
 
@@ -1394,6 +2017,7 @@ footer {
             accept="image/*"
         >
 
+
         <div
             id="photoPreview"
             class="photo-preview"
@@ -1401,18 +2025,27 @@ footer {
 
     </div>
 
+
     <br>
 
-    <button onclick="removePhoto()">
+
+    <button
+        onclick="removePhoto()"
+    >
         Remove Picture
     </button>
 
+
     <p
         class="small"
-        style="margin-top:15px"
+        style="
+            margin-top:15px
+        "
     >
-        Your uploaded picture is saved on this device
-        in this version.
+
+        Your uploaded picture is saved on this
+        device in this version.
+
     </p>
 
 </section>
@@ -1422,21 +2055,26 @@ footer {
      MEMORIES
 ===================================================== -->
 
-<section class="card glass">
+<section
+    class="card glass"
+>
 
     <h2>
         📖 Our Memories
     </h2>
+
 
     <input
         id="memoryTitle"
         placeholder="Memory title"
     >
 
+
     <textarea
         id="memoryText"
         placeholder="Write about this memory..."
     ></textarea>
+
 
     <button
         class="primary"
@@ -1445,9 +2083,12 @@ footer {
         Save Memory ♡
     </button>
 
+
     <div
         id="memories"
-        style="margin-top:20px"
+        style="
+            margin-top:20px
+        "
     ></div>
 
 </section>
@@ -1457,108 +2098,183 @@ footer {
      CHANGE THEME
 ===================================================== -->
 
-<section class="card glass">
+<section
+    class="card glass"
+>
 
     <h2>
         🎨 Change Our World
     </h2>
 
+
     <div class="theme-grid">
+
 
         <div
             class="theme-choice"
             data-theme="galaxy"
         >
-            <div class="theme-preview preview-galaxy"></div>
+
+            <div
+                class="theme-preview preview-galaxy"
+            ></div>
+
             🌌 Galaxy
+
         </div>
+
 
         <div
             class="theme-choice"
             data-theme="romance"
         >
-            <div class="theme-preview preview-romance"></div>
+
+            <div
+                class="theme-preview preview-romance"
+            ></div>
+
             💗 Romance
+
         </div>
+
 
         <div
             class="theme-choice"
             data-theme="spring"
         >
-            <div class="theme-preview preview-spring"></div>
+
+            <div
+                class="theme-preview preview-spring"
+            ></div>
+
             🌸 Spring
+
         </div>
+
 
         <div
             class="theme-choice"
             data-theme="summer"
         >
-            <div class="theme-preview preview-summer"></div>
+
+            <div
+                class="theme-preview preview-summer"
+            ></div>
+
             ☀️ Summer
+
         </div>
+
 
         <div
             class="theme-choice"
             data-theme="autumn"
         >
-            <div class="theme-preview preview-autumn"></div>
+
+            <div
+                class="theme-preview preview-autumn"
+            ></div>
+
             🍂 Autumn
+
         </div>
+
 
         <div
             class="theme-choice"
             data-theme="winter"
         >
-            <div class="theme-preview preview-winter"></div>
+
+            <div
+                class="theme-preview preview-winter"
+            ></div>
+
             ❄️ Winter
+
         </div>
+
 
         <div
             class="theme-choice"
             data-theme="day"
         >
-            <div class="theme-preview preview-day"></div>
+
+            <div
+                class="theme-preview preview-day"
+            ></div>
+
             🌤️ Day
+
         </div>
+
 
         <div
             class="theme-choice"
             data-theme="night"
         >
-            <div class="theme-preview preview-night"></div>
+
+            <div
+                class="theme-preview preview-night"
+            ></div>
+
             🌙 Night
+
         </div>
+
 
         <div
             class="theme-choice"
             data-theme="northern"
         >
-            <div class="theme-preview preview-northern"></div>
+
+            <div
+                class="theme-preview preview-northern"
+            ></div>
+
             🌌 Northern Lights
+
         </div>
+
 
         <div
             class="theme-choice"
             data-theme="snow"
         >
-            <div class="theme-preview preview-snow"></div>
+
+            <div
+                class="theme-preview preview-snow"
+            ></div>
+
             🏔️ Snowy Mountains
+
         </div>
+
 
         <div
             class="theme-choice"
             data-theme="beach"
         >
-            <div class="theme-preview preview-beach"></div>
+
+            <div
+                class="theme-preview preview-beach"
+            ></div>
+
             🏖️ Beach
+
         </div>
+
 
         <div
             class="theme-choice"
             data-theme="sunset"
         >
-            <div class="theme-preview preview-sunset"></div>
+
+            <div
+                class="theme-preview preview-sunset"
+            ></div>
+
             🌅 Sunset
+
         </div>
 
     </div>
@@ -1566,13 +2282,22 @@ footer {
 </section>
 
 
-<section class="card glass center">
+<!-- =====================================================
+     RESET
+===================================================== -->
 
-    <button onclick="resetUniverse()">
+<section
+    class="card glass center"
+>
+
+    <button
+        onclick="resetUniverse()"
+    >
         Start A New Universe
     </button>
 
 </section>
+
 
 </div>
 
@@ -1580,6 +2305,7 @@ footer {
 <footer>
     Made with love ♡
 </footer>
+
 
 </main>
 
@@ -1591,14 +2317,23 @@ footer {
 ===================================================== */
 
 const stars =
-    document.getElementById("stars");
+    document.getElementById(
+        "stars"
+    );
 
-for(let i = 0; i < 120; i++){
+for (
+    let i = 0;
+    i < 120;
+    i++
+) {
 
     const star =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
-    star.className = "star";
+    star.className =
+        "star";
 
     star.style.left =
         Math.random() * 100 + "%";
@@ -1612,70 +2347,292 @@ for(let i = 0; i < 120; i++){
     star.style.opacity =
         Math.random() * .8 + .2;
 
-    stars.appendChild(star);
+    stars.appendChild(
+        star
+    );
 }
 
 
 /* =====================================================
-   DATA
+   LOAD SAVED UNIVERSE
 ===================================================== */
 
-let world =
-    JSON.parse(
+let world = null;
+
+try {
+
+    const saved =
         localStorage.getItem(
             "ourLittleUniverse"
-        )
-    ) || null;
+        );
+
+    if (saved) {
+
+        world =
+            JSON.parse(
+                saved
+            );
+
+    }
+
+} catch (error) {
+
+    console.log(
+        "Could not load saved universe.",
+        error
+    );
+
+}
+
 
 let selectedTheme =
+    world?.theme ||
     "galaxy";
 
 
 /* =====================================================
-   THEME SELECTOR
+   SAVE UNIVERSE
+===================================================== */
+
+function saveWorld() {
+
+    if (!world) return;
+
+    try {
+
+        localStorage.setItem(
+            "ourLittleUniverse",
+            JSON.stringify(
+                world
+            )
+        );
+
+    } catch (error) {
+
+        console.error(
+            "Could not save universe:",
+            error
+        );
+
+        alert(
+            "Your browser may be running out of storage space. Try removing an old picture."
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   SETUP INPUTS
+===================================================== */
+
+const yourNameInput =
+    document.getElementById(
+        "yourName"
+    );
+
+const theirNameInput =
+    document.getElementById(
+        "theirName"
+    );
+
+const startDateInput =
+    document.getElementById(
+        "startDate"
+    );
+
+
+/* =====================================================
+   SAVE SETUP WHILE TYPING
+===================================================== */
+
+function saveSetupAsYouType() {
+
+    if (world) return;
+
+    const setup = {
+
+        yourName:
+            yourNameInput.value,
+
+        theirName:
+            theirNameInput.value,
+
+        startDate:
+            startDateInput.value,
+
+        theme:
+            selectedTheme
+
+    };
+
+    try {
+
+        localStorage.setItem(
+            "ourLittleUniverseSetup",
+            JSON.stringify(
+                setup
+            )
+        );
+
+    } catch (error) {
+
+        console.log(
+            "Could not save setup.",
+            error
+        );
+
+    }
+
+}
+
+
+yourNameInput.addEventListener(
+    "input",
+    saveSetupAsYouType
+);
+
+theirNameInput.addEventListener(
+    "input",
+    saveSetupAsYouType
+);
+
+startDateInput.addEventListener(
+    "input",
+    saveSetupAsYouType
+);
+
+
+/* =====================================================
+   RESTORE SETUP
+===================================================== */
+
+function restoreSetup() {
+
+    if (world) return;
+
+    try {
+
+        const savedSetup =
+            localStorage.getItem(
+                "ourLittleUniverseSetup"
+            );
+
+        if (!savedSetup) return;
+
+        const setup =
+            JSON.parse(
+                savedSetup
+            );
+
+        yourNameInput.value =
+            setup.yourName ||
+            "";
+
+        theirNameInput.value =
+            setup.theirName ||
+            "";
+
+        startDateInput.value =
+            setup.startDate ||
+            "";
+
+        if (setup.theme) {
+
+            selectedTheme =
+                setup.theme;
+
+            applyTheme(
+                selectedTheme,
+                false
+            );
+
+            updateThemeButtons();
+
+        }
+
+    } catch (error) {
+
+        console.log(
+            "Could not restore setup.",
+            error
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   THEME BUTTONS
 ===================================================== */
 
 document
-.querySelectorAll(".theme-choice")
-.forEach(choice => {
+.querySelectorAll(
+    ".theme-choice"
+)
+.forEach(
+    choice => {
 
-    choice.addEventListener(
-        "click",
-        () => {
+        choice.addEventListener(
+            "click",
+            () => {
 
-            selectedTheme =
-                choice.dataset.theme;
+                selectedTheme =
+                    choice.dataset.theme;
 
-            applyTheme(
-                selectedTheme
-            );
-
-            document
-            .querySelectorAll(
-                ".theme-choice"
-            )
-            .forEach(c => {
-
-                c.classList.toggle(
-                    "active",
-                    c.dataset.theme ===
-                    selectedTheme
+                applyTheme(
+                    selectedTheme,
+                    true
                 );
 
-            });
+                updateThemeButtons();
+
+            }
+        );
+
+    }
+);
+
+
+function updateThemeButtons() {
+
+    document
+    .querySelectorAll(
+        ".theme-choice"
+    )
+    .forEach(
+        choice => {
+
+            choice.classList.toggle(
+                "active",
+                choice.dataset.theme ===
+                selectedTheme
+            );
 
         }
     );
 
-});
+}
 
 
-function applyTheme(theme){
+function applyTheme(
+    theme,
+    save = true
+) {
 
     document.body.className =
-        "theme-" + theme;
+        "theme-" +
+        theme;
 
-    if(world){
+    selectedTheme =
+        theme;
+
+    if (
+        world &&
+        save
+    ) {
 
         world.theme =
             theme;
@@ -1691,37 +2648,36 @@ function applyTheme(theme){
    CREATE UNIVERSE
 ===================================================== */
 
-function createUniverse(){
+function createUniverse() {
 
     const yourName =
-        document
-        .getElementById("yourName")
+        yourNameInput
         .value
         .trim();
 
     const theirName =
-        document
-        .getElementById("theirName")
+        theirNameInput
         .value
         .trim();
 
     const startDate =
-        document
-        .getElementById("startDate")
-        .value;
+        startDateInput.value;
 
-    if(
+
+    if (
         !yourName ||
         !theirName ||
         !startDate
-    ){
+    ) {
 
         alert(
             "Please fill in both names and your beginning date ♡"
         );
 
         return;
+
     }
+
 
     world = {
 
@@ -1751,23 +2707,16 @@ function createUniverse(){
 
     };
 
+
     saveWorld();
 
-    showUniverse();
 
-}
-
-
-/* =====================================================
-   SAVE
-===================================================== */
-
-function saveWorld(){
-
-    localStorage.setItem(
-        "ourLittleUniverse",
-        JSON.stringify(world)
+    localStorage.removeItem(
+        "ourLittleUniverseSetup"
     );
+
+
+    showUniverse();
 
 }
 
@@ -1776,25 +2725,40 @@ function saveWorld(){
    SHOW UNIVERSE
 ===================================================== */
 
-function showUniverse(){
+function showUniverse() {
 
     document
-    .getElementById("setup")
-    .classList.add("hidden");
+    .getElementById(
+        "setup"
+    )
+    .classList.add(
+        "hidden"
+    );
+
 
     document
-    .getElementById("universe")
-    .classList.remove("hidden");
+    .getElementById(
+        "universe"
+    )
+    .classList.remove(
+        "hidden"
+    );
+
 
     document
-    .getElementById("title")
+    .getElementById(
+        "title"
+    )
     .textContent =
         world.yourName +
         " ♡ " +
         world.theirName;
 
+
     document
-    .getElementById("subtitle")
+    .getElementById(
+        "subtitle"
+    )
     .textContent =
         "Our little universe, made for " +
         world.yourName +
@@ -1802,12 +2766,20 @@ function showUniverse(){
         world.theirName +
         ".";
 
+
     selectedTheme =
-        world.theme;
+        world.theme ||
+        "galaxy";
+
 
     applyTheme(
-        world.theme
+        selectedTheme,
+        false
     );
+
+
+    updateThemeButtons();
+
 
     renderWishes();
 
@@ -1826,71 +2798,103 @@ function showUniverse(){
    TIMER
 ===================================================== */
 
-function updateTimer(){
+function updateTimer() {
 
-    if(!world) return;
+    if (!world) return;
+
 
     const start =
         new Date(
             world.startDate
         ).getTime();
 
+
     const now =
         Date.now();
+
 
     let difference =
         now - start;
 
-    if(difference < 0){
+
+    if (
+        difference < 0
+    ) {
+
         difference = 0;
+
     }
+
 
     const totalSeconds =
         Math.floor(
             difference / 1000
         );
 
+
     const days =
         Math.floor(
-            totalSeconds / 86400
+            totalSeconds /
+            86400
         );
+
 
     const hours =
         Math.floor(
-            (totalSeconds % 86400) /
-            3600
+            (
+                totalSeconds %
+                86400
+            ) / 3600
         );
+
 
     const minutes =
         Math.floor(
-            (totalSeconds % 3600) /
-            60
+            (
+                totalSeconds %
+                3600
+            ) / 60
         );
 
+
     const seconds =
-        totalSeconds % 60;
+        totalSeconds %
+        60;
+
 
     document
-    .getElementById("days")
+    .getElementById(
+        "days"
+    )
     .textContent =
         days;
 
+
     document
-    .getElementById("hours")
+    .getElementById(
+        "hours"
+    )
     .textContent =
         hours;
 
+
     document
-    .getElementById("minutes")
+    .getElementById(
+        "minutes"
+    )
     .textContent =
         minutes;
 
+
     document
-    .getElementById("seconds")
+    .getElementById(
+        "seconds"
+    )
     .textContent =
         seconds;
 
 }
+
 
 setInterval(
     updateTimer,
@@ -1902,103 +2906,128 @@ setInterval(
    OUR SONG
 ===================================================== */
 
-function getYouTubeID(url){
+function getYouTubeID(
+    url
+) {
 
-    try{
+    try {
 
         const parsed =
-            new URL(url);
+            new URL(
+                url
+            );
 
-        /*
-         * Standard:
-         * youtube.com/watch?v=XXXX
-         */
 
-        if(
+        if (
             parsed.hostname
-            .includes("youtube.com")
-        ){
+            .includes(
+                "youtube.com"
+            )
+        ) {
 
             const id =
-                parsed.searchParams
+                parsed
+                .searchParams
                 .get("v");
 
-            if(id){
+
+            if (id) {
+
                 return id;
+
             }
 
         }
 
-        /*
-         * Short:
-         * youtu.be/XXXX
-         */
 
-        if(
+        if (
             parsed.hostname
-            .includes("youtu.be")
-        ){
+            .includes(
+                "youtu.be"
+            )
+        ) {
 
-            return parsed.pathname
-                .replace("/","")
-                .split("?")[0];
+            return parsed
+                .pathname
+                .replace(
+                    "/",
+                    ""
+                )
+                .split(
+                    "?"
+                )[0];
 
         }
 
-        /*
-         * Embed:
-         * youtube.com/embed/XXXX
-         */
 
-        if(
+        if (
             parsed.pathname
-            .includes("/embed/")
-        ){
+            .includes(
+                "/embed/"
+            )
+        ) {
 
-            return parsed.pathname
-                .split("/embed/")[1]
-                .split("?")[0];
+            return parsed
+                .pathname
+                .split(
+                    "/embed/"
+                )[1]
+                .split(
+                    "?"
+                )[0];
 
         }
 
-    } catch(error){
+    } catch (error) {
 
         return null;
 
     }
 
+
     return null;
+
 }
 
 
-function saveSong(){
+function saveSong() {
 
     const link =
         document
-        .getElementById("songLink")
+        .getElementById(
+            "songLink"
+        )
         .value
         .trim();
 
-    if(!link){
+
+    if (!link) {
 
         alert(
             "Paste a YouTube link first ♡"
         );
 
         return;
+
     }
 
-    const videoID =
-        getYouTubeID(link);
 
-    if(!videoID){
+    const videoID =
+        getYouTubeID(
+            link
+        );
+
+
+    if (!videoID) {
 
         alert(
             "That doesn't look like a valid YouTube link ♡"
         );
 
         return;
+
     }
+
 
     world.song = {
 
@@ -2010,6 +3039,7 @@ function saveSong(){
 
     };
 
+
     saveWorld();
 
     renderSong();
@@ -2017,7 +3047,7 @@ function saveSong(){
 }
 
 
-function renderSong(){
+function renderSong() {
 
     const player =
         document
@@ -2025,23 +3055,27 @@ function renderSong(){
             "songPlayer"
         );
 
+
     const input =
         document
         .getElementById(
             "songLink"
         );
 
-    if(
+
+    if (
         !world ||
         !world.song
-    ){
+    ) {
 
         player.innerHTML = `
 
             <div class="song-empty">
 
                 <div class="small">
+
                     Our song hasn't been chosen yet ♡
+
                 </div>
 
             </div>
@@ -2049,10 +3083,13 @@ function renderSong(){
         `;
 
         return;
+
     }
+
 
     input.value =
         world.song.link;
+
 
     player.innerHTML = `
 
@@ -2082,12 +3119,16 @@ function renderSong(){
 
         </div>
 
+
         <br>
+
 
         <button
             onclick="removeSong()"
         >
+
             Change Our Song
+
         </button>
 
     `;
@@ -2095,26 +3136,33 @@ function renderSong(){
 }
 
 
-function removeSong(){
+function removeSong() {
 
-    if(
+    if (
         !confirm(
             "Do you want to choose a different song?"
         )
-    ){
+    ) {
+
         return;
+
     }
+
 
     world.song =
         null;
 
+
     saveWorld();
+
 
     document
     .getElementById(
         "songLink"
     )
-    .value = "";
+    .value =
+        "";
+
 
     renderSong();
 
@@ -2125,7 +3173,7 @@ function removeSong(){
    WISHES
 ===================================================== */
 
-function addWish(){
+function addWish() {
 
     const text =
         document
@@ -2135,6 +3183,7 @@ function addWish(){
         .value
         .trim();
 
+
     const author =
         document
         .getElementById(
@@ -2143,14 +3192,22 @@ function addWish(){
         .value
         .trim();
 
-    if(!text){
+
+    if (!text) {
 
         alert(
             "Write a little wish first ♡"
         );
 
         return;
+
     }
+
+
+    world.wishes =
+        world.wishes ||
+        [];
+
 
     world.wishes.unshift({
 
@@ -2166,34 +3223,45 @@ function addWish(){
             .toLocaleDateString(
                 undefined,
                 {
-                    day:"numeric",
-                    month:"short",
-                    year:"numeric"
+                    day:
+                        "numeric",
+
+                    month:
+                        "short",
+
+                    year:
+                        "numeric"
                 }
             )
 
     });
 
+
     saveWorld();
+
 
     document
     .getElementById(
         "wishText"
     )
-    .value = "";
+    .value =
+        "";
+
 
     document
     .getElementById(
         "wishAuthor"
     )
-    .value = "";
+    .value =
+        "";
+
 
     renderWishes();
 
 }
 
 
-function renderWishes(){
+function renderWishes() {
 
     const container =
         document
@@ -2201,13 +3269,19 @@ function renderWishes(){
             "wishes"
         );
 
+
     container.innerHTML =
         "";
 
-    if(
-        !world.wishes ||
+
+    world.wishes =
+        world.wishes ||
+        [];
+
+
+    if (
         !world.wishes.length
-    ){
+    ) {
 
         container.innerHTML = `
 
@@ -2221,88 +3295,113 @@ function renderWishes(){
         `;
 
         return;
+
     }
 
+
     world.wishes.forEach(
-        (wish,index) => {
+        (
+            wish,
+            index
+        ) => {
 
-        const note =
-            document
-            .createElement("div");
+            const note =
+                document
+                .createElement(
+                    "div"
+                );
 
-        note.className =
-            "note";
 
-        note.style.setProperty(
-            "--rotation",
-            (
-                Math.random()*4 - 2
-            ) + "deg"
-        );
+            note.className =
+                "note";
 
-        note.innerHTML = `
 
-            <div class="note-date">
+            note.style.setProperty(
+                "--rotation",
+                (
+                    Math.random() *
+                    4 -
+                    2
+                ) + "deg"
+            );
 
-                ${escapeHTML(
-                    wish.date
-                )}
 
-            </div>
+            note.innerHTML = `
 
-            <div class="note-text">
+                <div class="note-date">
 
-                ${escapeHTML(
-                    wish.text
-                )}
+                    ${escapeHTML(
+                        wish.date
+                    )}
 
-            </div>
+                </div>
 
-            <div class="note-author">
 
-                — ${escapeHTML(
-                    wish.author
-                )}
+                <div class="note-text">
 
-            </div>
+                    ${escapeHTML(
+                        wish.text
+                    )}
 
-            <button
+                </div>
 
-                class="delete-note"
 
-                onclick="
-                    deleteWish(${index})
-                "
+                <div class="note-author">
 
-            >
-                remove
-            </button>
+                    — ${escapeHTML(
+                        wish.author
+                    )}
 
-        `;
+                </div>
 
-        container.appendChild(
-            note
-        );
 
-    });
+                <button
+
+                    class="delete-note"
+
+                    onclick="
+                        deleteWish(${index})
+                    "
+
+                >
+
+                    remove
+
+                </button>
+
+            `;
+
+
+            container.appendChild(
+                note
+            );
+
+        }
+    );
 
 }
 
 
-function deleteWish(index){
+function deleteWish(
+    index
+) {
 
-    if(
+    if (
         !confirm(
             "Remove this little wish?"
         )
-    ){
+    ) {
+
         return;
+
     }
+
 
     world.wishes.splice(
         index,
         1
     );
+
 
     saveWorld();
 
@@ -2321,39 +3420,50 @@ document
 )
 .addEventListener(
     "change",
-    function(event){
+    function(event) {
 
         const file =
-            event.target.files[0];
+            event
+            .target
+            .files[0];
 
-        if(!file) return;
 
-        if(
+        if (!file) return;
+
+
+        if (
             file.size >
-            8 * 1024 * 1024
-        ){
+            8 *
+            1024 *
+            1024
+        ) {
 
             alert(
                 "That picture is a little too large. Please choose one under 8MB ♡"
             );
 
             return;
+
         }
+
 
         const reader =
             new FileReader();
 
+
         reader.onload =
-            function(e){
+            function(e) {
 
                 world.photo =
                     e.target.result;
+
 
                 saveWorld();
 
                 loadPhoto();
 
             };
+
 
         reader.readAsDataURL(
             file
@@ -2363,7 +3473,7 @@ document
 );
 
 
-function loadPhoto(){
+function loadPhoto() {
 
     const preview =
         document
@@ -2371,16 +3481,19 @@ function loadPhoto(){
             "photoPreview"
         );
 
-    if(
+
+    if (
         !world ||
         !world.photo
-    ){
+    ) {
 
         preview.innerHTML =
             "";
 
         return;
+
     }
+
 
     preview.innerHTML = `
 
@@ -2397,30 +3510,42 @@ function loadPhoto(){
 }
 
 
-function removePhoto(){
+function removePhoto() {
 
-    if(!world.photo){
+    if (
+        !world.photo
+    ) {
+
         return;
+
     }
 
-    if(
+
+    if (
         !confirm(
             "Remove this picture from your universe?"
         )
-    ){
+    ) {
+
         return;
+
     }
+
 
     world.photo =
         null;
 
+
     saveWorld();
+
 
     document
     .getElementById(
         "photoInput"
     )
-    .value = "";
+    .value =
+        "";
+
 
     loadPhoto();
 
@@ -2431,7 +3556,7 @@ function removePhoto(){
    MEMORIES
 ===================================================== */
 
-function addMemory(){
+function addMemory() {
 
     const title =
         document
@@ -2441,6 +3566,7 @@ function addMemory(){
         .value
         .trim();
 
+
     const text =
         document
         .getElementById(
@@ -2449,17 +3575,25 @@ function addMemory(){
         .value
         .trim();
 
-    if(
+
+    if (
         !title ||
         !text
-    ){
+    ) {
 
         alert(
             "Give your memory a title and a little story ♡"
         );
 
         return;
+
     }
+
+
+    world.memories =
+        world.memories ||
+        [];
+
 
     world.memories.unshift({
 
@@ -2474,34 +3608,45 @@ function addMemory(){
             .toLocaleDateString(
                 undefined,
                 {
-                    day:"numeric",
-                    month:"long",
-                    year:"numeric"
+                    day:
+                        "numeric",
+
+                    month:
+                        "long",
+
+                    year:
+                        "numeric"
                 }
             )
 
     });
 
+
     saveWorld();
+
 
     document
     .getElementById(
         "memoryTitle"
     )
-    .value = "";
+    .value =
+        "";
+
 
     document
     .getElementById(
         "memoryText"
     )
-    .value = "";
+    .value =
+        "";
+
 
     renderMemories();
 
 }
 
 
-function renderMemories(){
+function renderMemories() {
 
     const container =
         document
@@ -2509,13 +3654,19 @@ function renderMemories(){
             "memories"
         );
 
+
     container.innerHTML =
         "";
 
-    if(
-        !world.memories ||
+
+    world.memories =
+        world.memories ||
+        [];
+
+
+    if (
         !world.memories.length
-    ){
+    ) {
 
         container.innerHTML = `
 
@@ -2529,85 +3680,108 @@ function renderMemories(){
         `;
 
         return;
+
     }
 
+
     world.memories.forEach(
-        (memory,index) => {
+        (
+            memory,
+            index
+        ) => {
 
-        const div =
-            document
-            .createElement("div");
+            const div =
+                document
+                .createElement(
+                    "div"
+                );
 
-        div.className =
-            "memory";
 
-        div.innerHTML = `
+            div.className =
+                "memory";
 
-            <strong>
 
-                ${escapeHTML(
-                    memory.title
-                )}
+            div.innerHTML = `
 
-            </strong>
+                <strong>
 
-            <br>
+                    ${escapeHTML(
+                        memory.title
+                    )}
 
-            <small>
+                </strong>
 
-                ${escapeHTML(
-                    memory.date
-                )}
 
-            </small>
+                <br>
 
-            <p>
 
-                ${escapeHTML(
-                    memory.text
-                )}
+                <small>
 
-            </p>
+                    ${escapeHTML(
+                        memory.date
+                    )}
 
-            <button
+                </small>
 
-                onclick="
-                    deleteMemory(${index})
-                "
 
-                style="
-                    margin-top:10px
-                "
+                <p>
 
-            >
-                Remove
-            </button>
+                    ${escapeHTML(
+                        memory.text
+                    )}
 
-        `;
+                </p>
 
-        container.appendChild(
-            div
-        );
 
-    });
+                <button
+
+                    onclick="
+                        deleteMemory(${index})
+                    "
+
+                    style="
+                        margin-top:10px
+                    "
+
+                >
+
+                    Remove
+
+                </button>
+
+            `;
+
+
+            container.appendChild(
+                div
+            );
+
+        }
+    );
 
 }
 
 
-function deleteMemory(index){
+function deleteMemory(
+    index
+) {
 
-    if(
+    if (
         !confirm(
             "Remove this memory?"
         )
-    ){
+    ) {
+
         return;
+
     }
+
 
     world.memories.splice(
         index,
         1
     );
+
 
     saveWorld();
 
@@ -2617,22 +3791,31 @@ function deleteMemory(index){
 
 
 /* =====================================================
-   RESET
+   RESET EVERYTHING
 ===================================================== */
 
-function resetUniverse(){
+function resetUniverse() {
 
-    if(
+    if (
         !confirm(
-            "This will erase the universe saved on this device. Continue?"
+            "This will erase everything saved for your universe on this device. Continue?"
         )
-    ){
+    ) {
+
         return;
+
     }
+
 
     localStorage.removeItem(
         "ourLittleUniverse"
     );
+
+
+    localStorage.removeItem(
+        "ourLittleUniverseSetup"
+    );
+
 
     location.reload();
 
@@ -2643,34 +3826,38 @@ function resetUniverse(){
    ESCAPE TEXT
 ===================================================== */
 
-function escapeHTML(value){
+function escapeHTML(
+    value
+) {
 
-    return String(value)
+    return String(
+        value
+    )
 
-        .replace(
-            /&/g,
-            "&amp;"
-        )
+    .replace(
+        /&/g,
+        "&amp;"
+    )
 
-        .replace(
-            /</g,
-            "&lt;"
-        )
+    .replace(
+        /</g,
+        "&lt;"
+    )
 
-        .replace(
-            />/g,
-            "&gt;"
-        )
+    .replace(
+        />/g,
+        "&gt;"
+    )
 
-        .replace(
-            /"/g,
-            "&quot;"
-        )
+    .replace(
+        /"/g,
+        "&quot;"
+    )
 
-        .replace(
-            /'/g,
-            "&#039;"
-        );
+    .replace(
+        /'/g,
+        "&#039;"
+    );
 
 }
 
@@ -2679,11 +3866,16 @@ function escapeHTML(value){
    START
 ===================================================== */
 
-if(world){
+if (world) {
 
     showUniverse();
 
+} else {
+
+    restoreSetup();
+
 }
+
 
 updateTimer();
 
