@@ -1,7 +1,12 @@
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>Our Little Universe ♡</title>
 
@@ -51,7 +56,6 @@ body {
 
 .background {
     position: fixed;
-
     inset: 0;
 
     z-index: -10;
@@ -66,7 +70,6 @@ body {
     content: "";
 
     position: absolute;
-
     inset: 0;
 
     background:
@@ -85,6 +88,7 @@ body {
 .theme-galaxy .background {
 
     background:
+
         radial-gradient(
             circle at 20% 30%,
             rgba(164,87,255,.45),
@@ -119,6 +123,7 @@ body {
 .theme-romance .background {
 
     background:
+
         radial-gradient(
             circle at 20% 20%,
             rgba(255,185,210,.7),
@@ -147,6 +152,7 @@ body {
 .theme-spring .background {
 
     background:
+
         radial-gradient(
             circle at 15% 20%,
             #ffd9e8,
@@ -175,6 +181,7 @@ body {
 .theme-summer .background {
 
     background:
+
         radial-gradient(
             circle at 50% 20%,
             #fff2a8,
@@ -197,6 +204,7 @@ body {
 .theme-autumn .background {
 
     background:
+
         radial-gradient(
             circle at 20% 20%,
             #f6b15b,
@@ -225,6 +233,7 @@ body {
 .theme-winter .background {
 
     background:
+
         radial-gradient(
             circle at 50% 10%,
             #e7f8ff,
@@ -247,6 +256,7 @@ body {
 .theme-day .background {
 
     background:
+
         radial-gradient(
             circle at 70% 15%,
             #fff7bc,
@@ -268,6 +278,7 @@ body {
 .theme-night .background {
 
     background:
+
         radial-gradient(
             circle at 70% 20%,
             #ffffff44,
@@ -290,6 +301,7 @@ body {
 .theme-northern .background {
 
     background:
+
         radial-gradient(
             ellipse at 20% 20%,
             rgba(43,255,207,.32),
@@ -310,7 +322,6 @@ body {
         );
 }
 
-
 .aurora {
 
     display: none;
@@ -329,6 +340,7 @@ body {
     opacity: .65;
 
     background:
+
         radial-gradient(
             ellipse at 30% 60%,
             rgba(45,255,198,.7),
@@ -386,7 +398,6 @@ body {
     bottom: 0;
 
     width: 100%;
-
     height: 40%;
 }
 
@@ -505,7 +516,6 @@ body {
     bottom: 0;
 
     width: 100%;
-
     height: 48%;
 
     background:
@@ -529,7 +539,6 @@ body {
     bottom: 0;
 
     height: 18%;
-
     width: 100%;
 
     background:
@@ -555,6 +564,7 @@ body {
 .theme-sunset .background {
 
     background:
+
         linear-gradient(
             180deg,
             #39205e 0%,
@@ -765,7 +775,7 @@ h1 {
 .small {
 
     opacity:
-        .65;
+        .7;
 
     font-size:
         .85rem;
@@ -952,8 +962,30 @@ button:hover {
 
 
 /* =====================================================
-   THEMES
+   THEME AREA
 ===================================================== */
+
+.theme-section {
+
+    margin-top:
+        15px;
+
+    animation:
+        fadeIn .35s ease;
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 .theme-grid {
 
@@ -1123,6 +1155,97 @@ button:hover {
             #ff9b68,
             #ffd080
         );
+}
+
+
+/* =====================================================
+   THEME TOGGLE BUTTON
+===================================================== */
+
+.theme-toggle-button {
+
+    width:
+        100%;
+
+    font-size:
+        1rem;
+
+    padding:
+        16px;
+
+    background:
+        rgba(255,255,255,.14);
+}
+
+.theme-done-button {
+
+    margin-top:
+        18px;
+
+    width:
+        100%;
+}
+
+
+/* =====================================================
+   SAVE BUTTON
+===================================================== */
+
+.save-card {
+
+    text-align:
+        center;
+
+    padding:
+        30px;
+}
+
+.save-button {
+
+    width:
+        100%;
+
+    max-width:
+        500px;
+
+    padding:
+        18px 25px;
+
+    font-size:
+        1.1rem;
+
+    background:
+        rgba(255,255,255,.20);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.15);
+}
+
+.save-message {
+
+    margin-top:
+        14px;
+
+    opacity:
+        0;
+
+    transform:
+        translateY(5px);
+
+    transition:
+        .3s;
+
+    font-size:
+        .95rem;
+}
+
+.save-message.show {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
 }
 
 
@@ -1486,9 +1609,38 @@ footer {
         min-height:
             200px;
     }
+
+    .theme-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media(max-width:400px) {
+
+    .theme-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .time-box strong {
+
+        font-size:
+            1.6rem;
+    }
+
 }
 
 </style>
+
 </head>
 
 
@@ -1496,12 +1648,13 @@ footer {
 
 
 <!-- =====================================================
-     BACKGROUND ELEMENTS
+     BACKGROUND
 ===================================================== -->
 
 <div class="background">
 
     <div class="aurora"></div>
+
 
     <div class="mountains">
 
@@ -1513,6 +1666,7 @@ footer {
 
     </div>
 
+
     <div class="beach">
 
         <div class="beach-sun"></div>
@@ -1522,6 +1676,7 @@ footer {
         <div class="sand"></div>
 
     </div>
+
 
     <div class="sunset-sun"></div>
 
@@ -1535,7 +1690,7 @@ footer {
 
 
 <!-- =====================================================
-     APP
+     MAIN APP
 ===================================================== -->
 
 <main class="app">
@@ -1577,6 +1732,7 @@ footer {
     <h2>
         ✨ Create Our Universe
     </h2>
+
 
     <div class="row">
 
@@ -1826,7 +1982,7 @@ footer {
 
 
 <!-- =====================================================
-     TIMER
+     RELATIONSHIP TIMER
 ===================================================== -->
 
 <section
@@ -2042,10 +2198,7 @@ footer {
             margin-top:15px
         "
     >
-
-        Your uploaded picture is saved on this
-        device in this version.
-
+        Your uploaded picture is saved on this device.
     </p>
 
 </section>
@@ -2103,180 +2256,264 @@ footer {
 >
 
     <h2>
-        🎨 Change Our World
+        🎨 Our Theme
     </h2>
 
 
-    <div class="theme-grid">
+    <p
+        class="small"
+        style="
+            margin-bottom:18px
+        "
+    >
+
+        Your current world is saved. Open the theme
+        choices whenever you want to change the
+        atmosphere.
+
+    </p>
 
 
-        <div
-            class="theme-choice"
-            data-theme="galaxy"
-        >
+    <button
+        class="theme-toggle-button"
+        id="openThemesButton"
+        onclick="toggleThemes()"
+    >
+        🎨 Change Our Theme
+    </button>
+
+
+    <div
+        id="themeSection"
+        class="theme-section hidden"
+    >
+
+
+        <div class="theme-grid">
+
 
             <div
-                class="theme-preview preview-galaxy"
-            ></div>
+                class="theme-choice"
+                data-theme="galaxy"
+            >
 
-            🌌 Galaxy
+                <div
+                    class="theme-preview preview-galaxy"
+                ></div>
+
+                🌌 Galaxy
+
+            </div>
+
+
+            <div
+                class="theme-choice"
+                data-theme="romance"
+            >
+
+                <div
+                    class="theme-preview preview-romance"
+                ></div>
+
+                💗 Romance
+
+            </div>
+
+
+            <div
+                class="theme-choice"
+                data-theme="spring"
+            >
+
+                <div
+                    class="theme-preview preview-spring"
+                ></div>
+
+                🌸 Spring
+
+            </div>
+
+
+            <div
+                class="theme-choice"
+                data-theme="summer"
+            >
+
+                <div
+                    class="theme-preview preview-summer"
+                ></div>
+
+                ☀️ Summer
+
+            </div>
+
+
+            <div
+                class="theme-choice"
+                data-theme="autumn"
+            >
+
+                <div
+                    class="theme-preview preview-autumn"
+                ></div>
+
+                🍂 Autumn
+
+            </div>
+
+
+            <div
+                class="theme-choice"
+                data-theme="winter"
+            >
+
+                <div
+                    class="theme-preview preview-winter"
+                ></div>
+
+                ❄️ Winter
+
+            </div>
+
+
+            <div
+                class="theme-choice"
+                data-theme="day"
+            >
+
+                <div
+                    class="theme-preview preview-day"
+                ></div>
+
+                🌤️ Day
+
+            </div>
+
+
+            <div
+                class="theme-choice"
+                data-theme="night"
+            >
+
+                <div
+                    class="theme-preview preview-night"
+                ></div>
+
+                🌙 Night
+
+            </div>
+
+
+            <div
+                class="theme-choice"
+                data-theme="northern"
+            >
+
+                <div
+                    class="theme-preview preview-northern"
+                ></div>
+
+                🌌 Northern Lights
+
+            </div>
+
+
+            <div
+                class="theme-choice"
+                data-theme="snow"
+            >
+
+                <div
+                    class="theme-preview preview-snow"
+                ></div>
+
+                🏔️ Snowy Mountains
+
+            </div>
+
+
+            <div
+                class="theme-choice"
+                data-theme="beach"
+            >
+
+                <div
+                    class="theme-preview preview-beach"
+                ></div>
+
+                🏖️ Beach
+
+            </div>
+
+
+            <div
+                class="theme-choice"
+                data-theme="sunset"
+            >
+
+                <div
+                    class="theme-preview preview-sunset"
+                ></div>
+
+                🌅 Sunset
+
+            </div>
+
 
         </div>
 
 
-        <div
-            class="theme-choice"
-            data-theme="romance"
+        <button
+            class="theme-done-button"
+            onclick="closeThemes()"
         >
+            Done Choosing ♡
+        </button>
 
-            <div
-                class="theme-preview preview-romance"
-            ></div>
+    </div>
 
-            💗 Romance
-
-        </div>
+</section>
 
 
-        <div
-            class="theme-choice"
-            data-theme="spring"
-        >
+<!-- =====================================================
+     SAVE EVERYTHING
+===================================================== -->
 
-            <div
-                class="theme-preview preview-spring"
-            ></div>
+<section
+    class="card glass save-card"
+>
 
-            🌸 Spring
-
-        </div>
-
-
-        <div
-            class="theme-choice"
-            data-theme="summer"
-        >
-
-            <div
-                class="theme-preview preview-summer"
-            ></div>
-
-            ☀️ Summer
-
-        </div>
+    <h2>
+        💾 Save Our Universe
+    </h2>
 
 
-        <div
-            class="theme-choice"
-            data-theme="autumn"
-        >
+    <p class="small">
 
-            <div
-                class="theme-preview preview-autumn"
-            ></div>
+        Finished adding your memories, wishes,
+        picture, song or anything else?
 
-            🍂 Autumn
+        Press save when you're ready. ♡
 
-        </div>
+    </p>
 
 
-        <div
-            class="theme-choice"
-            data-theme="winter"
-        >
-
-            <div
-                class="theme-preview preview-winter"
-            ></div>
-
-            ❄️ Winter
-
-        </div>
+    <br>
 
 
-        <div
-            class="theme-choice"
-            data-theme="day"
-        >
-
-            <div
-                class="theme-preview preview-day"
-            ></div>
-
-            🌤️ Day
-
-        </div>
+    <button
+        class="save-button"
+        onclick="saveEverything()"
+    >
+        💾 Save Our Universe ♡
+    </button>
 
 
-        <div
-            class="theme-choice"
-            data-theme="night"
-        >
-
-            <div
-                class="theme-preview preview-night"
-            ></div>
-
-            🌙 Night
-
-        </div>
-
-
-        <div
-            class="theme-choice"
-            data-theme="northern"
-        >
-
-            <div
-                class="theme-preview preview-northern"
-            ></div>
-
-            🌌 Northern Lights
-
-        </div>
-
-
-        <div
-            class="theme-choice"
-            data-theme="snow"
-        >
-
-            <div
-                class="theme-preview preview-snow"
-            ></div>
-
-            🏔️ Snowy Mountains
-
-        </div>
-
-
-        <div
-            class="theme-choice"
-            data-theme="beach"
-        >
-
-            <div
-                class="theme-preview preview-beach"
-            ></div>
-
-            🏖️ Beach
-
-        </div>
-
-
-        <div
-            class="theme-choice"
-            data-theme="sunset"
-        >
-
-            <div
-                class="theme-preview preview-sunset"
-            ></div>
-
-            🌅 Sunset
-
-        </div>
-
+    <div
+        id="saveMessage"
+        class="save-message"
+    >
+        ✨ Everything has been saved ♡
     </div>
 
 </section>
@@ -2354,7 +2591,7 @@ for (
 
 
 /* =====================================================
-   LOAD SAVED UNIVERSE
+   LOAD SAVED WORLD
 ===================================================== */
 
 let world = null;
@@ -2391,7 +2628,7 @@ let selectedTheme =
 
 
 /* =====================================================
-   SAVE UNIVERSE
+   SAVE WORLD
 ===================================================== */
 
 function saveWorld() {
@@ -2407,6 +2644,8 @@ function saveWorld() {
             )
         );
 
+        return true;
+
     } catch (error) {
 
         console.error(
@@ -2417,6 +2656,8 @@ function saveWorld() {
         alert(
             "Your browser may be running out of storage space. Try removing an old picture."
         );
+
+        return false;
 
     }
 
@@ -2444,7 +2685,7 @@ const startDateInput =
 
 
 /* =====================================================
-   SAVE SETUP WHILE TYPING
+   TEMPORARY SETUP SAVE
 ===================================================== */
 
 function saveSetupAsYouType() {
@@ -2466,6 +2707,7 @@ function saveSetupAsYouType() {
             selectedTheme
 
     };
+
 
     try {
 
@@ -2526,31 +2768,35 @@ function restoreSetup() {
                 savedSetup
             );
 
+
         yourNameInput.value =
             setup.yourName ||
             "";
+
 
         theirNameInput.value =
             setup.theirName ||
             "";
 
+
         startDateInput.value =
             setup.startDate ||
             "";
+
 
         if (setup.theme) {
 
             selectedTheme =
                 setup.theme;
 
-            applyTheme(
-                selectedTheme,
-                false
-            );
-
-            updateThemeButtons();
-
         }
+
+        applyTheme(
+            selectedTheme,
+            false
+        );
+
+        updateThemeButtons();
 
     } catch (error) {
 
@@ -2565,36 +2811,55 @@ function restoreSetup() {
 
 
 /* =====================================================
-   THEME BUTTONS
+   THEME BUTTON SETUP
 ===================================================== */
 
-document
-.querySelectorAll(
-    ".theme-choice"
-)
-.forEach(
-    choice => {
+function setupThemeButtons() {
 
-        choice.addEventListener(
-            "click",
-            () => {
+    document
+    .querySelectorAll(
+        ".theme-choice"
+    )
+    .forEach(
+        choice => {
 
-                selectedTheme =
-                    choice.dataset.theme;
+            choice.addEventListener(
+                "click",
+                () => {
 
-                applyTheme(
-                    selectedTheme,
-                    true
-                );
+                    selectedTheme =
+                        choice.dataset.theme;
 
-                updateThemeButtons();
 
-            }
-        );
+                    applyTheme(
+                        selectedTheme,
+                        true
+                    );
 
-    }
-);
 
+                    updateThemeButtons();
+
+
+                    /*
+                       Theme changes are saved immediately
+                       so the new atmosphere is not lost.
+                    */
+
+                }
+            );
+
+        }
+    );
+
+}
+
+
+setupThemeButtons();
+
+
+/* =====================================================
+   UPDATE ACTIVE THEME
+===================================================== */
 
 function updateThemeButtons() {
 
@@ -2617,6 +2882,10 @@ function updateThemeButtons() {
 }
 
 
+/* =====================================================
+   APPLY THEME
+===================================================== */
+
 function applyTheme(
     theme,
     save = true
@@ -2626,8 +2895,10 @@ function applyTheme(
         "theme-" +
         theme;
 
+
     selectedTheme =
         theme;
+
 
     if (
         world &&
@@ -2645,6 +2916,87 @@ function applyTheme(
 
 
 /* =====================================================
+   OPEN / CLOSE THEME MENU
+===================================================== */
+
+function toggleThemes() {
+
+    const section =
+        document.getElementById(
+            "themeSection"
+        );
+
+    const button =
+        document.getElementById(
+            "openThemesButton"
+        );
+
+
+    const isHidden =
+        section.classList.contains(
+            "hidden"
+        );
+
+
+    if (isHidden) {
+
+        section.classList.remove(
+            "hidden"
+        );
+
+        button.textContent =
+            "🎨 Hide Theme Choices";
+
+    } else {
+
+        section.classList.add(
+            "hidden"
+        );
+
+        button.textContent =
+            "🎨 Change Our Theme";
+
+    }
+
+}
+
+
+function closeThemes() {
+
+    const section =
+        document.getElementById(
+            "themeSection"
+        );
+
+    const button =
+        document.getElementById(
+            "openThemesButton"
+        );
+
+
+    section.classList.add(
+        "hidden"
+    );
+
+
+    button.textContent =
+        "🎨 Change Our Theme";
+
+
+    window.scrollTo({
+
+        top:
+            document.body.scrollHeight,
+
+        behavior:
+            "smooth"
+
+    });
+
+}
+
+
+/* =====================================================
    CREATE UNIVERSE
 ===================================================== */
 
@@ -2655,10 +3007,12 @@ function createUniverse() {
         .value
         .trim();
 
+
     const theirName =
         theirNameInput
         .value
         .trim();
+
 
     const startDate =
         startDateInput.value;
@@ -2781,6 +3135,28 @@ function showUniverse() {
     updateThemeButtons();
 
 
+    /*
+       Always hide theme choices when entering
+       the finished universe.
+    */
+
+    document
+    .getElementById(
+        "themeSection"
+    )
+    .classList.add(
+        "hidden"
+    );
+
+
+    document
+    .getElementById(
+        "openThemesButton"
+    )
+    .textContent =
+        "🎨 Change Our Theme";
+
+
     renderWishes();
 
     renderMemories();
@@ -2795,7 +3171,7 @@ function showUniverse() {
 
 
 /* =====================================================
-   TIMER
+   RELATIONSHIP TIMER
 ===================================================== */
 
 function updateTimer() {
@@ -3126,9 +3502,7 @@ function renderSong() {
         <button
             onclick="removeSong()"
         >
-
             Change Our Song
-
         </button>
 
     `;
@@ -3791,7 +4165,75 @@ function deleteMemory(
 
 
 /* =====================================================
-   RESET EVERYTHING
+   SAVE EVERYTHING BUTTON
+===================================================== */
+
+function saveEverything() {
+
+    if (!world) return;
+
+
+    /*
+       Make sure the current theme is included.
+    */
+
+    world.theme =
+        selectedTheme;
+
+
+    /*
+       Save the entire universe.
+    */
+
+    const saved =
+        saveWorld();
+
+
+    if (!saved) return;
+
+
+    /*
+       Hide the theme menu after saving.
+    */
+
+    closeThemes();
+
+
+    /*
+       Show confirmation.
+    */
+
+    const message =
+        document.getElementById(
+            "saveMessage"
+        );
+
+
+    message.classList.add(
+        "show"
+    );
+
+
+    message.textContent =
+        "✨ Everything has been saved ♡";
+
+
+    setTimeout(
+        () => {
+
+            message.classList.remove(
+                "show"
+            );
+
+        },
+        3000
+    );
+
+}
+
+
+/* =====================================================
+   RESET
 ===================================================== */
 
 function resetUniverse() {
@@ -3863,7 +4305,7 @@ function escapeHTML(
 
 
 /* =====================================================
-   START
+   START / RESTORE
 ===================================================== */
 
 if (world) {
